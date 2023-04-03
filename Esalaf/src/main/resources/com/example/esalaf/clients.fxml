@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="930.0" stylesheets="@bootstrap3.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esalaf.ClientsController">
+   <children>
+      <TabPane layoutY="48.0" prefHeight="523.0" prefWidth="930.0" styleClass="plain" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Clients">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="mytab" layoutX="63.0" layoutY="52.0" prefHeight="225.0" prefWidth="804.0">
+                          <columns>
+                            <TableColumn fx:id="col_id" prefWidth="67.20000457763672" text="ID" />
+                            <TableColumn fx:id="col_nom" prefWidth="234.39999389648438" text="Nom" />
+                            <TableColumn fx:id="col_tele" minWidth="0.0" prefWidth="208.00009155273438" text="Téléphone" />
+                            <TableColumn fx:id="col_adresse" minWidth="0.0" prefWidth="292.0" text="Adresse" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="63.0" layoutY="287.0" text="Modifier un client:">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="63.0" layoutY="330.0" text="ID:">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="63.0" layoutY="14.0" text="Liste:">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="465.0" layoutY="330.0" text="Téléphone:">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="190.0" layoutY="332.0" text="Nom:">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="id_up" layoutX="63.0" layoutY="361.0" prefHeight="32.0" prefWidth="83.0" promptText="ID..." />
+                        <TextField fx:id="nom_up" layoutX="190.0" layoutY="361.0" prefHeight="32.0" prefWidth="239.0" promptText="Nom..." />
+                        <TextField fx:id="tel_up" layoutX="465.0" layoutY="361.0" prefHeight="32.0" prefWidth="250.0" promptText="Téléphone..." />
+                        <TextField fx:id="adr_up" layoutX="60.0" layoutY="430.0" prefHeight="42.0" prefWidth="370.0" promptText="Adresse..." />
+                        <Label layoutX="60.0" layoutY="403.0" text="Adresse:">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="updateButton" layoutX="755.0" layoutY="430.0" mnemonicParsing="false" onAction="#onUpdateButtonClick" prefHeight="41.0" prefWidth="112.0" styleClass="warning" stylesheets="@bootstrap3.css" text="Update">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font></Button>
+                        <Label fx:id="emptyID_Nom" layoutX="475.0" layoutY="447.0" prefHeight="26.0" prefWidth="250.0" textFill="RED">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Ajouter/supprimer un client">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="48.0" layoutY="53.0" text="Nom:" translateY="30.0">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font></Label>
+                        <Label layoutX="48.0" layoutY="128.0" text="Téléphone:" translateY="30.0">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font></Label>
+                        <Label layoutX="395.0" layoutY="53.0" text="Adresse:" translateY="30.0">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font></Label>
+                        <TextField fx:id="nom" layoutX="48.0" layoutY="94.0" prefHeight="34.0" prefWidth="292.0" promptText="Entrez un nom..." styleClass="text" translateY="20.0" />
+                        <TextField fx:id="tele" layoutX="48.0" layoutY="163.0" prefHeight="34.0" prefWidth="292.0" promptText="Entrez un numéro de téléphone..." translateY="20.0" />
+                        <TextField fx:id="adresse" layoutX="395.0" layoutY="93.0" prefHeight="104.0" prefWidth="503.0" promptText="Entrez un adresse..." translateY="20.0" />
+                        <Button fx:id="saveButt" layoutX="797.0" layoutY="238.0" mnemonicParsing="false" onAction="#onSaveButtonClick" prefHeight="34.0" prefWidth="101.0" styleClass="success" text="Save">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="48.0" layoutY="28.0" text="Ajouter un client:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="48.0" layoutY="304.0" text="Supprimer un client:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutY="286.0" prefHeight="7.0" prefWidth="930.0" />
+                        <Label layoutX="48.0" layoutY="347.0" text="ID:">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="id_del" layoutX="48.0" layoutY="388.0" prefHeight="34.0" prefWidth="222.0" promptText="Entrez un ID..." />
+                        <Button fx:id="saveButt1" layoutX="797.0" layoutY="422.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" prefHeight="34.0" prefWidth="101.0" styleClass="danger" text="Delete">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="emptyID_Delete" layoutX="48.0" layoutY="431.0" prefHeight="26.0" prefWidth="250.0" textFill="RED">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="emptyNom" layoutX="599.0" layoutY="240.0" prefHeight="26.0" prefWidth="183.0" textFill="RED">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <ButtonBar prefHeight="48.0" prefWidth="1140.0">
+        <buttons>
+            <Button fx:id="ClientsTabButt" mnemonicParsing="false" onAction="#onClientsTabButtonClick" styleClass="info" text="Clients" translateX="-710.0" />
+          <Button fx:id="CommandesTabButt" minWidth="23.0" mnemonicParsing="false" onAction="#onCommandesTabButtonClick" prefHeight="31.0" styleClass="info" text="Commandes" translateX="-710.0" />
+            <Button fx:id="ProduitsTabButt" mnemonicParsing="false" onAction="#onProduitsTabButtonClick" styleClass="info" text="Produits" translateX="-710.0" />
+            <Button fx:id="CreditTabButt" mnemonicParsing="false" onAction="#onCreditTabButtonClick" styleClass="info" text="Credits" translateX="-710.0" />
+        </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
